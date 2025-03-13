@@ -8,6 +8,7 @@ namespace KooliProjekt.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        // Constructor with dependency injection for ILogger
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

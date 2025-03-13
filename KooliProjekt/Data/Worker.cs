@@ -1,15 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace KooliProjekt.Models
+namespace KooliProjekt.Data
 {
     public class Worker
     {
-        
-        
-            [Required]
-        int Id { get; set; }
-            
-        public int WorkerId { get; set; }
+        public int Id { get; set; }
 
         public string WorkerName { get; set; }
 
