@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using KooliProjekt.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace KooliProjekt.Data
@@ -9,5 +10,20 @@ namespace KooliProjekt.Data
             : base(options)
         {
         }
+        public DbSet<Car> Cars { get; set; }
+
+        public DbSet<CarDisplacement> CarDisplacements { get; set; }
+
+        public DbSet<CarCare> CarCares { get; set; }
+
+        public DbSet<Operation> Operations { get; set; }
+
+        public DbSet<Repair> Repairs { get; set; }
+
+        public DbSet<Wash> Washes { get; set; }
+
+        public DbSet<Worker> Workers { get; set; }
+
+
     }
 }
