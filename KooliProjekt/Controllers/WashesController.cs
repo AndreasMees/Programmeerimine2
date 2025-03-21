@@ -19,10 +19,10 @@ namespace KooliProjekt.Controllers
         }
 
         // GET: Washes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
             var applicationDbContext = _context.Washes.Include(w => w.Car).Include(w => w.Worker);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await applicationDbContext.GetPagedAsync(page, 5));
         }
 
         // GET: Washes/Details/5

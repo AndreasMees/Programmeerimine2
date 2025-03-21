@@ -1,4 +1,4 @@
-﻿@model IEnumerable<KooliProjekt.Data.CarDisplacement>
+﻿@model PagedResult<KooliProjekt.Data.CarDisplacement>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Car)
+                Car
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Worker)
+                Worker
             </th>
             <th></th>
         </tr>
