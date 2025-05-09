@@ -21,13 +21,9 @@ namespace KooliProjekt.Controllers
         // GET: Workers
         public async Task<IActionResult> Index(int page = 1)
         {
-            var applicationDbContext = _context.Washes.Include(w => w.Car).Include(w => w.Worker);
-            return View(await applicationDbContext.GetPagedAsync(page, 5));
-
-            return View(await applicationDbContext.GetPagedAsync(page, 5));
+            var pagedResult = await _context.Workers.GetPagedAsync(page, 5);
+            return View(pagedResult);
         }
-
-        // GET: Workers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

@@ -22,7 +22,9 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model.Results)
+        {
+
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Car.Model)
@@ -39,3 +41,4 @@
 }
     </tbody>
 </table>
+@(await Component.InvokeAsync<PagerViewComponent>(Model))

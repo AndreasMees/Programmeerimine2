@@ -13,29 +13,32 @@
     <thead>
         <tr>
             <th>
-               WorkerName
+                Car
             </th>
             <th>
-               WorkerAge
+                Worker
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Results) { {
-        <tr>
-            <td>
-               WorkerName
-            </td>
-            <td>
-            WorkerAge
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Results)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkerAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkerName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+@(await Component.InvokeAsync<PagerViewComponent>(Model))
