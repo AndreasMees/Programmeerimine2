@@ -9,5 +9,7 @@ namespace KooliProjekt.Data
         public string WorkerName { get; set; }
 
         public string WorkerAge { get; set; }
+
+
     }
 }

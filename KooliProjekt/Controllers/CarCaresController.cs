@@ -9,14 +9,9 @@ using KooliProjekt.Data;
 
 namespace KooliProjekt.Controllers
 {
-    public class CarCaresController : Controller
+    public class CarCaresController(ApplicationDbContext context) : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public CarCaresController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        private readonly ApplicationDbContext _context = context;
 
         // GET: CarCares
         public async Task<IActionResult> Index(int page = 1)
@@ -35,7 +30,7 @@ namespace KooliProjekt.Controllers
 
             var carCare = await _context.CarCares
                 .Include(c => c.Car)
-                .Include(c => c.Worker)
+                .Include(c => c.Worker) 
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (carCare == null)
             {
