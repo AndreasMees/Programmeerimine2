@@ -147,7 +147,7 @@ namespace KooliProjekt.Data
         private static void SeedWashes(ApplicationDbContext context)
         {
             var washes = new List<Wash>
-            {
+    {
                 new Wash { CarId = 1, WorkerId = 8 },
                 new Wash { CarId = 2, WorkerId = 7 },
                 new Wash { CarId = 3, WorkerId = 6 },

@@ -17,11 +17,13 @@ namespace KooliProjekt
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options =>
                 options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
             builder.Services.AddControllersWithViews();
 
             // Register all services
@@ -81,9 +83,10 @@ namespace KooliProjekt
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
             app.MapRazorPages();
 
-            app.Run(); // Jääb alati plokist väljapoole
+            app.Run(); // J��b alati plokist v�ljapoole
         }
     }
 }
